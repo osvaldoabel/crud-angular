@@ -1,0 +1,17 @@
+<div class="row">
+	<h3>{{ !post.id?'Criar Post' :'Editar Post' }}</h3>
+
+	<form class="form-horizontal" (submit)="save()" >
+		<div class="form-group">
+			<label for="title" class="control-label">Title</label>
+			<input type="text" class="form-control" name="title" id="title" [(ngModel)]="post.title">
+		</div>
+
+		<div class="form-group">
+			<label for="title" class="control-label">Body</label>
+			<textarea id="body" name="body" class="form-control" [(ngModel)]="post.body"></textarea>
+		</div>
+
+		<app-button type="submit" color="primary">{{ !post.id ? 'Criar' : 'Editar' }}</app-button>
+	</form>
+</div>
